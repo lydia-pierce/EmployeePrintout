@@ -10,9 +10,15 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
+ 
+// Declares the enum and type for what position the employee is
 enum EMPLOYEE_TYPE { MANAGER, EMPLOYEE, VOLUNTEER };
 
+/// <summary>
+/// Converts enum EMPLOYEE_TYPE to the corresponding string
+/// </summary>
+/// <param name="type"></param>
+/// <returns></returns>
 string EMPLOYEEToStr(EMPLOYEE_TYPE type)
 {
     switch (type)
@@ -24,12 +30,18 @@ string EMPLOYEEToStr(EMPLOYEE_TYPE type)
     };
 };
 
+/// <summary>
+/// A struct that contains the address of the input employee
+/// </summary>
 struct Address
 {
     string City;
     string State;
 };
 
+/// <summary>
+/// A struct that contains the employee's information
+/// </summary>
 struct Employee
 {
     string Name;
@@ -38,7 +50,10 @@ struct Employee
     EMPLOYEE_TYPE position;
 } employeeinfo;
 
-
+/// <summary>
+/// Take the input employee information, feed it through the structs, print to the screen
+/// </summary>
+/// <returns></returns>
 int main()
 {
     // Input the employee's information into the variables.
@@ -48,6 +63,7 @@ int main()
     employeeinfo.address.State = "MO";
     employeeinfo.position = MANAGER;
 
+    // Pretty print the employee's information to the screen
     cout << "Position: " << EMPLOYEEToStr(employeeinfo.position) << "; Name: " << employeeinfo.Name << "; Division Number: " << employeeinfo.DivisionNo
         << "; Address: " << employeeinfo.address.City << ", " << employeeinfo.address.State << "\n";
     return 0;
